@@ -1,0 +1,18 @@
+#ad_page_contract {}
+db_foreach query "select barcode, evento_id from expo_badge_tmp" {
+    set iscritto_id [db_string query "select iscritto_id from expo_iscritti where barcode ilike '%$barcode%'" -default "-1"]
+    if {$iscritto_id ne "-1"} {
+	if {![db_0or1row query "select * from expo_presenze where evento_id = :evento_id and iscritto_id = :iscritto_id limit 1"]} {
+	    with_catch errmsg {
+		db_dml query "insert into expo_presenze (evento_id, iscritto_id) values (:evento_id, :iscritto_id)"
+	    } {
+		ad_return_complaint 1 "<b>ERRORE<b><br><code>$errmsg</code>"
+		return
+	    }
+	}
+    } else {
+	db_dml query "insert into expo_tmp (evento_id, barcode) values (20, :barcode)"
+    }
+}
+ad_returnredirect index
+ad_script_abort

@@ -1,0 +1,20 @@
+ad_page_contract {
+} {
+    relatore_id:optional
+}
+set query [ad_conn url]
+if {[set request [string range $query [expr [string last / $query] + 1] end]] eq "" && [info exists relatore_id] == 0} {
+    rp_internal_redirect "/packages/[ad_conn package_key]/www/relatori"
+    ad_script_abort
+}
+if {[info exists relatore_id] == 0} {
+    if {[db_0or1row query "select relatore_id from expo_relatori where permalink = :request limit 1"]} {
+	set relatore_id [db_string query "select relatore_id from expo_relatori where permalink = :request limit 1"]
+    } else {
+	rp_internal_redirect "/www/global/file-not-found.html"
+	ad_script_abort
+    }
+}
+rp_form_put relatore_id $relatore_id
+set internal_path "/packages/[ad_conn package_key]/www/relatore"
+rp_internal_redirect $internal_path

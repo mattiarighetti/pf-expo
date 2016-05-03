@@ -1,0 +1,14 @@
+set query [ad_conn url]
+# Se punta alla root
+if {[set request [string range $query [expr [string last / $query] + 1] end]] eq ""} {
+    if {[db_0or1row query "select * from expo_edizioni where attivo is true limit 1"]} {
+	set expo_id [db_string query "select expo_id from expo_edizioni where attivo is true limit 1"]
+    } else {
+	set expo_id [db_string query "select expo_id from expo_edizioni order by data desc limit 1"]
+    }
+} elseif {[db_0or1row query "select * from expo_edizioni where lower(permalink) = :request limit 1"]} {
+    set expo_id [db_string query "select expo_id from expo_edizioni where lower(permalink) = :request limit 1"]
+}
+rp_form_put expo_id $expo_id
+set internal_path "/packages/[ad_conn package_key]/www/expo"
+rp_internal_redirect $internal_path

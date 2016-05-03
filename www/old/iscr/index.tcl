@@ -1,0 +1,99 @@
+ad_page_contract {
+    @author Mattia Righetti (mattia.righetti@professionefinanza.com)
+    @creation-date Monday 7 November, 2014
+} {
+    iscritto_id:integer,optional
+}
+set page_title "Iscriviti"
+set user_id [ad_conn user_id]
+#Imposta form per raccolta generalità
+set form_name "iscritto"
+ad_form -name $form_name \
+    -mode edit \
+    -form {
+	iscritto_id:key
+	{nome:text
+	    {label "Nome"}
+	    {html {maxlength "100" size "70" style "text-transform:capitalize"}}
+	}
+	{cognome:text
+	    {label "Cognome"}
+	    {html {maxlength "100" size "70" style "text-transform:capitalize"}}
+	}
+	{email:text
+	    {label "Email"}
+	    {html {maxlength "80" size "70" style "text-transform:lowercase"}}
+	}
+	{societa:text,optional
+	    {label "Societ&agrave;"}
+	    {html {maxlength "100" size "70" style "text-transform:capitalize"}}
+	}
+	{provincia:text
+	    {label "Provincia"}
+	    {html {maxlength "20" size "70"}}
+	}
+	{telefono:text
+	    {label "Telefono"}
+	    {html {maxlength "20" size "70"}}
+	}
+	{op_qual:boolean(radio)
+	    {label "Operatore qualificato"}
+	    {options {{"No" 0} {"Sì" 1}}}
+	    {help_text "Effettuando questa scelta ci si dichiara operatori qualificati ai sensi previsti dai regolamenti Consob."}
+	    {html {size "1" style "width:50px"}}
+	}
+    } -on_submit {
+	set query01 [db_0or1row query "SELECT iscritto_id FROM pf_expo_iscr WHERE email = :email"]
+	if {$query01 eq 1} {
+	    set iscritto_id [db_string query "SELECT iscritto_id FROM pf_expo_iscr WHERE LOWER(email) = LOWER(:email)"]
+	    ad_returnredirect "choose-events?iscritto_id=$iscritto_id"
+	    ad_script_abort
+	}
+	set ctr_errori 0
+	if {$op_qual eq 0} {
+	    incr ctr_errori
+	}
+	if {$ctr_errori > 0} {
+	    break
+	}
+    } -after_submit {
+	ad_returnredirect "choose-events?iscritto_id=$iscritto_id"
+	ad_script_abort
+    } -validate {
+	{nome
+	    {[string length $nome] > 2}
+	    "Nome troppo corto."
+	}
+	{cognome
+	    {[string length $cognome] >2}
+	    "Cognome troppo corto."
+	}
+	{email
+	    {[string match "*@*" $email] == 1}
+	    "Indirizzo email non valido."
+	}
+        {op_qual
+	    {$op_qual == 1}
+	    "Bisogna essere operatori qualificati per partecipare all'evento."
+        }
+    } -select_query {
+	"SELECT iscritto_id, nome, cognome, societa, email, provincia, telefono, op_qual FROM pf_expo_iscr"
+    } -new_data {
+	set iscritto_id [db_string query "SELECT COALESCE(MAX(iscritto_id)+1,1) FROM pf_expo_iscr"]
+	set today [db_string query "SELECT CURRENT_DATE"]
+	db_dml query "INSERT INTO pf_expo_iscr (iscritto_id, nome, cognome, societa, email, provincia, telefono, op_qual, data) VALUES (:iscritto_id, INITCAP(LOWER(:nome)), INITCAP(LOWER(:cognome)), INITCAP(:societa), LOWER(:email), INITCAP(LOWER(:provincia)), :telefono, :op_qual, :today)"
+	set to_mail [string tolower $email 1]
+	set from_mail "mattia.righetti@professionefinanza.com"
+	set reply_to "info@pfexpo.it"
+	set subject "Grazie per esserti iscritto al PFEXPO '15!"
+	set mnome [string totitle $nome 1]
+	set mcognome [string totitle $cognome 1]
+	set body "Buongiorno $mnome $mcognome,\n\nti confermiamo che la tua iscrizione è stata correttamente elaborata.\nPer modificare gli eventi a cui ti sei iscritto, basta compilare il modulo della registrazione ancora, con la stessa email ($to_mail).\n\nTi ringraziamo e ti aspettiamo il 29 gennaio al Palazzo delle Stelline.\n\nIl team PF."
+	acs_mail_lite::send -to_addr $to_mail \
+	    -from_addr $from_mail \
+	    -subject $subject \
+	    -body $body \
+	    -reply_to $reply_to
+    } -edit_data {
+	db_dml query "UPDATE pf_expo_iscr SET nome = :nome, cognome = :cognome, societa = :societa, email = :email, provincia = :provincia, telefono = :telefono, op_qual = :op_qual WHERE iscritto_id = :iscritto_id"
+    }

@@ -1,0 +1,15 @@
+set query [ad_conn url]
+ns_log notice conncic $query
+if {[set request [string range $query [expr [string last / $query] + 1] end]] eq ""} {
+    rp_internal_redirect "/packages/[ad_conn package_key]/www/partners"
+    ad_script_abort
+}
+if {[db_0or1row query "select partner_id from expo_partners where permalink = :request limit 1"]} {
+    set partner_id [db_string query "select partner_id from expo_partners where permalink = :request limit 1"]
+} else {
+    rp_internal_redirect "/www/global/file-not-found.html"
+    ad_script_abort
+}
+rp_form_put partner_id $partner_id
+set internal_path "/packages/[ad_conn package_key]/www/partner"
+rp_internal_redirect $internal_path

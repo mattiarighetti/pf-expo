@@ -1,0 +1,58 @@
+@font-face {
+    font-family: Novecento;
+    src: url(Novecentowide-Light.otf);
+}
+@font-face {
+    font-family: Novecento-bold;
+    font-weight: bold;
+    src: url(Novecentowide-Bold.otf);
+}
+.tbl td {
+    width: calc(100% / 7);
+}
+.tbl {
+    font-family: Novecento-bold;
+    font-weight: bold;
+    text-align: center;
+    
+    color: #FFF;
+    padding: 5px;
+    border-collapse: collapse;
+    border-spacing: 5px;
+}
+
+.tbl tr:first-child td {
+  border-top: 0;
+}
+.tbl tr:last-child td {
+  border-bottom: 0;
+}
+.tbl tr td:first-child, 
+.tbl tr th:first-child {
+  border-left: 0;
+}
+
+.tbl tr td:last-child,
+.tbl tr th:last-child {
+  border-right: 0;
+}
+
+.tbl td, .tbl th {
+    border: 2pt dotted #F6A22D;
+}
+.tbl a {
+    color: #FFF;
+}
+.tbl a:hover {
+    color:#FFF;
+    text-decoration:underlined;
+}
+.tbl td {
+    vertical-align:middle;
+}
+
+.tbl .blue {
+    font-family: Novecento;
+    color:#2C4B80;
+    vertical-align: middle;
+}

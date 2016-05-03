@@ -1,0 +1,118 @@
+#sb-site {
+    padding-top: 122px;
+}
+.page-intro{
+	position:relative;
+}
+.page-intro img {
+    width: 100%;
+}
+.professionistaLink {
+    height: 7%;
+    left: 5%;
+    position: absolute;
+    top: 45%;
+    width: 40%;
+}
+.investitoreLink {
+    height: 7%;
+    left: 5%;
+    position: absolute;
+    top: 55%;
+    width: 40%;
+}
+.milano {
+    height: 10%;
+    left: 50%;
+    position: absolute;
+    top: 4%;
+    width: 17%;
+}
+.milanoIcon {
+    height: 11%;
+    left: 66%;
+    position: absolute;
+    top: 10%;
+    width: 6%;
+}
+.padova {
+    height: 10%;
+    left: 79%;
+    position: absolute;
+    top: 4%;
+    width: 19%;
+}
+.padovaIcon {
+    height: 11%;
+    left: 73.5%;
+    position: absolute;
+    top: 10%;
+    width: 6%;
+}
+.firenze {
+    height: 11%;
+    left: 56%;
+    position: absolute;
+    top: 33%;
+    width: 16%;
+}
+.firenzeIcon {
+    height: 11%;
+    left: 69%;
+    position: absolute;
+    top: 24%;
+    width: 6%;
+}
+.roma {
+    height: 8%;
+    left: 70%;
+    position: absolute;
+    top: 46%;
+    width: 13%;
+}
+.romaIcon {
+    height: 11%;
+    left: 76.5%;
+    position: absolute;
+    top: 33%;
+    width: 6%;
+}
+.bari {
+    height: 11%;
+    left: 85.5%;
+    position: absolute;
+    top: 26%;
+    width: 13%;
+}
+.bariIcon {
+    height: 11%;
+    left: 89.5%;
+    position: absolute;
+    top: 37%;
+    width: 6%;
+}
+
+.home-widget, .page-section {
+    padding: 0 0 100px;
+}
+#special{
+	padding-top:100px;
+}
+#iscriviti table{
+	margin:0;
+}
+#edizioni{
+	padding-top:100px;
+}
+.featurette{
+	padding-bottom:40px;
+}
+.contact-google-map{
+	margin-bottom:-10px;
+}
+
+@media screen and (max-width: 768px) {
+	#edizioni .marketing > div{
+		text-align:center;
+	}
+}
