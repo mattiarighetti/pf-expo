@@ -241,7 +241,7 @@
 								</td>
 								<td bgcolor="#2C4B80">									
 								  <a href="/programma/financial-advisory-firenze">
-                                                                                Tavola Rotonda - Dal Financial Advisory al Wealth Planning: come cambia la consulenza ai grandi patrimoni con la MiFID II<br>
+                                                                                Tavola Rotonda - Dal Financial Advisor al Wealth Planning: come cambia la consulenza ai grandi patrimoni con la MiFID II<br>
                                                                                 <img height="18px" width="auto" src="/timetable/conferenza.png" align="right">
                                                                         </a>
 										@button_event_68;noquote@
@@ -269,7 +269,7 @@
 								</td>  
 								<td bgcolor="#985356">										
 								  <a href="/programma/scenari-prospettive-firenze">
-                                                                                Scenari e prospettive del mercato Immobiliare<br>
+                                                                                Il Real Estate nei processi di Wealth Advisory<br>
                                                                                 <img height="18px" width="auto" src="/timetable/immobiliare.png" align="right">
                                                                         </a>
 										@button_event_70;noquote@
@@ -604,7 +604,10 @@
 	<div class="go-top">
 		<a href="#"><i class="fa fa-angle-up"></i></a>
 	</div>
-	
+	<script type="text/javascript" id="cookiebanner"
+        src="http://cookiebanner.eu/js/cookiebanner.min.js"
+        data-message="Il sito usa cookie per migliorare la tua esperienza. Proseguendo nella navigazione, o chiudendo il banner, se ne accetta l'utilizzo."
+        data-linkmsg="Scopri di più"></script>
 	<script type="text/javascript" src="assets/js/jquery-1.11.2.min.js"></script> 
 	<script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script> 
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script> 

@@ -26,10 +26,10 @@ if {[db_0or1row query "select * from docenti d, expo_eve_doc e where d.docente_i
 #Estrae speakers per ogni categoria
 set speakers "<center>"
 db_foreach query "select tipo_id, descrizione from expo_speakers_tipo order by item_order" {
-    if {[db_0or1row query "select * from expo_eventi_speakers e, expo_speakers s where s.speaker_id = e.speaker_id and e.evento_id = :evento_id and s.tipo_id = :tipo_id limit 1"]} {
+    if {[db_0or1row query "select * from expo_eventi_speakers e, expo_speakers s where s.speaker_id = e.speaker_id and e.evento_id = :evento_id and e.tipo_id = :tipo_id limit 1"]} {
 	append speakers "<h4>$descrizione</h4><table border=\"0\"><tr>"
 	set speaker_partners ""
-	db_foreach query "select r.nome, r.cognome, r.immagine, r.permalink, r.speaker_id, r.partner_id from expo_speakers r, expo_eventi_speakers e where r.speaker_id = e.speaker_id and e.evento_id = :evento_id and r.tipo_id = :tipo_id order by r.partner_id, r.cognome" {
+	db_foreach query "select r.nome, r.cognome, r.immagine, r.permalink, r.speaker_id, r.partner_id from expo_speakers r, expo_eventi_speakers e where r.speaker_id = e.speaker_id and e.evento_id = :evento_id and e.tipo_id = :tipo_id order by r.partner_id, r.cognome" {
 	    append speakers "<td><center><a href=\"http://pfexpo.professionefinanza.com/speakers/$permalink\"><img class=\"img-circle img-responsive\" style=\"display:inline-block;\" src=\"http://images.professionefinanza.com/pfexpo/speakers_portraits/$immagine\" alt=\"$nome $cognome\" width=\"100\" height=\"100\"><p><b>$nome $cognome</b></p></center></td>"
 	    if {$partner_id ne ""} {
 		db_1row query "select immagine, permalink from expo_partners where partner_id = :partner_id"

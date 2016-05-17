@@ -175,7 +175,7 @@
 					    </div>
 			  <div data-row-span="1">
 			    <div data-field-span="1">
-			      <label>Accetto i termini e condizioni * <a href="//www.iubenda.com/privacy-policy/7769833" class="iubenda-white iubenda-embed" title="Privacy Policy">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script></label>
+			      <label>Accetto i termini e condizioni * <a href="http://professionefinanza.com/pagina.php?id=8" class="iubenda-white iubenda-embed" title="Privacy Policy" target="_blank">Privacy Policy</a></label>
 			      <font color="red">
 				<formerror id="privacy"></formerror>
   </font>

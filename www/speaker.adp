@@ -32,7 +32,7 @@
     <header id="header" class="fixed-header navbar-fixed-top sb-slide">
       <div class="container">
 	<div class="logo local-scroll">
-	  <a href="/#top" class="site-brand"><img src="http://images.professionefinanza.com/pfexpo/logos/bari-2016.png" height="90"></a>
+	  <a href="/#top" class="site-brand"><img src="http://images.professionefinanza.com/pfexpo/logos/firenze-2016.png" height="90"></a>
 				       </div> <!-- .logo -->
 	<div class="sb-toggle-right pull-right visible-xs visible-sm">
 	  <i class="fa fa-bars"></i>

@@ -122,7 +122,8 @@ db_foreach query "select tipo_id, descrizione as tipologia from expo_speakers_ti
 	append speaker_list_html "</div>"
     }
 }
-# Estrae speaker
+
+#Estrae speaker
 db_foreach query "select tipo_id, descrizione as tipologia from expo_speakers_tipo where tipo_id = 2 order by item_order" {
     if {[db_0or1row query "select * from expo_speakers r, expo_eventi e, expo_eventi_speakers l where e.expo_id = :expo_id and e.evento_id = l.evento_id and l.speaker_id = r.speaker_id and r.tipo_id = :tipo_id limit 1"]} {
 	append speaker_list_html "<br><center><h3>$tipologia</h3></center><br><div class=\"row\">"
@@ -132,6 +133,7 @@ db_foreach query "select tipo_id, descrizione as tipologia from expo_speakers_ti
 	append speaker_list_html "</div>"
     }
 }
+
 #DIVIDER: #PARTNERS
 set partners_list_html "<div class=\"container\"><div class=\"row\">"
 db_foreach query "select categoria_id, descrizione as categoria from expo_par_cat order by item_order" {
