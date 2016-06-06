@@ -20,8 +20,11 @@ db_foreach query "select iscritto_id, initcap(lower(nome)) as nome, initcap(lowe
 	append courses ";"
     }
     #Toglie ultimo br, inutile
+
     #set courses [string trimright $courses "<br />"]
-    append table_html $barcode ";" [string map {' &rsquo;} $nome] ";" [string map {' &rsquo;} $cognome] ";" [string map {' &rsquo; "\"" ""} $courses] "<br>"
+    if {[db_0or1row query "select * from expo_iscrizioni where iscritto_id = :iscritto_id and evento_id = 66"]} {
+	append table_html $barcode ";" [string map {' &rsquo;} $nome] ";" [string map {' &rsquo;} $cognome] ";" [string map {' &rsquo; "\"" ""} $courses] "<br>"
+    }
 }
 
 

@@ -210,7 +210,7 @@
 
 								</td>
 								<td bgcolor="#6EC6D6">									
-								  <a href="/programma/bail-in-firenze">
+								  <a href="/programma/busta-arancione">
                                                                                 LA BUSTA ARANCIONE: COME LEGGERLA E QUALI SOLUZIONI PER IL FUTURO?<br>
                                                                                 <img height="18px" width="auto" src="/timetable/previdenza.png" align="right">
                                                                         </a>
@@ -453,7 +453,7 @@
 
 					  <div class="col-md-4 col-sm-5">
 							<h2 class="featurette-heading">EDIZIONE X - PFEXPO MILANO<span class="text-muted">2016</span></h2> 
-							<!--<button type="button" class="btn btn-primary" onClick="location.href='http://images.professionefinanza.com/pfexpo/edizioni/report_expo15mi.pdf'">Scarica il report</button>-->
+							<button type="button" class="btn btn-primary" onClick="location.href='http://images.professionefinanza.com/pfexpo/edizioni/report_expo16mi.pdf'">Scarica il report</button>
 							<button type="button" class="btn btn-success" onClick="location.href='http://images.professionefinanza.com/pfexpo/edizioni/guida_expo16mi.pdf'">Scarica la guida</button>
 						</div>
 					</div>
