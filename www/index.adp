@@ -206,7 +206,7 @@
                                                                                 Mappa Mundi: le evoluzioni sociali a livello internazionale<br>
                                                                                 <img height="18px" width="auto" src="/timetable/relazione.png" align="right">
                                                                         </a>
-										@button_event_65;noquote@
+								
 
 								</td>
 								<td bgcolor="#6EC6D6">									
@@ -214,7 +214,7 @@
                                                                                 LA BUSTA ARANCIONE: COME LEGGERLA E QUALI SOLUZIONI PER IL FUTURO?<br>
                                                                                 <img height="18px" width="auto" src="/timetable/previdenza.png" align="right">
                                                                         </a>
-										@button_event_66;noquote@
+								
 								</td>
 							</tr>
 							<tr>
@@ -235,7 +235,7 @@
                                                                                 Le politiche monetarie: "divergenze parallele", inflazione e rendimenti<br>
                                                                                 <img height="18px" width="auto" src="/timetable/portafoglio.png" align="right">
                                                                         </a>
-										@button_event_67;noquote@
+								
  
 							
 								</td>
@@ -244,7 +244,7 @@
                                                                                 Tavola Rotonda - Dal Financial Advisor al Wealth Planning: come cambia la consulenza ai grandi patrimoni con la MiFID II<br>
                                                                                 <img height="18px" width="auto" src="/timetable/conferenza.png" align="right">
                                                                         </a>
-										@button_event_68;noquote@
+								
 								</td>
 							</tr>	      
 							<tr>
@@ -265,14 +265,14 @@
                                                                                 Strategie di investimento innovative: quale supporto dalla Robo4Advisory<br>
                                                                                 <img height="18px" width="auto" src="/timetable/portafoglio.png" align="right">
                                                                         </a>
-										@button_event_69;noquote@
+					
 								</td>  
 								<td bgcolor="#985356">										
 								  <a href="/programma/scenari-prospettive-firenze">
-                                                                                Il Real Estate nei processi di Wealth Advisory<br>
+                                                                    Il Real Estate nei processi di Wealth Advisory<br>
                                                                                 <img height="18px" width="auto" src="/timetable/immobiliare.png" align="right">
                                                                         </a>
-										@button_event_70;noquote@
+								
 								</td>
 							</tr>
 							<tr>
@@ -294,7 +294,7 @@
                                                                                 Il patrimonio Familiare: come organizzarlo anche in ottica successoria<br>
                                                                                 <img height="18px" width="auto" src="/timetable/pianificazione.png" align="right">
                                                                         </a>
-										@button_event_71;noquote@
+								
 									</td>
 								<td bgcolor="#C5C200">
 								  					
@@ -302,7 +302,7 @@
                                                                                 Lo Stato Patrimoniale del Cliente Imprenditore: come valutare correttamente le partecipazioni aziendali<br>
                                                                                 <img height="18px" width="auto" src="/timetable/impresa.png" align="right">
                                                                         </a>
-										@button_event_72;noquote@
+								
 									</td>
 							</tr>
 						</tbody>

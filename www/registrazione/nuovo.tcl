@@ -54,7 +54,7 @@ ad_form -name iscrizione \
 	    append barcode 0
 	}
 	append barcode $iscritto_id
-	db_dml query "INSERT INTO expo_iscritti (iscritto_id, nome, cognome, email, societa, telefono, provincia, data, barcode, pagato, expo_id) VALUES (:iscritto_id, :nome, :cognome, :email, :societa, :telefono, :provincia, current_date, :barcode, :voucher, 4)"
+	db_dml query "INSERT INTO expo_iscritti (iscritto_id, nome, cognome, email, societa, telefono, provincia, data, barcode, pagato, expo_id) VALUES (:iscritto_id, :nome, :cognome, :email, :societa, :telefono, :provincia, current_date, :barcode, :voucher, 5)"
     } -after_submit {
 	set return_url "index?q=[string tolower $cognome]"
 	ad_returnredirect -message "Iscrizione correttamente effettuata (ID: $iscritto_id)." $return_url

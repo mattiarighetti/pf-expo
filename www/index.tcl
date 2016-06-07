@@ -3,7 +3,7 @@ ad_page_contract {
     @creation-date 2015-11-16
     @cvs-id $Id$set oacs:msg
 } {
-    {expo_id "5"}
+    {expo_id "6"}
     {msg ""}
 }
 # Se ID Expo vuoto, prende quello attivo

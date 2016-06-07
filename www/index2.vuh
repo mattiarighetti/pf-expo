@@ -1,14 +1,26 @@
 set query [ad_conn url]
 # Se punta alla root
-if {[set request [string range $query [expr [string last / $query] + 1] end]] eq ""} {
+set request [string range $query [expr [string last / $query] + 1] end]
+if {$request eq ""} {
+    #Prende l'ultima edizione se non ce ne è uno attivo.
     if {[db_0or1row query "select * from expo_edizioni where attivo is true limit 1"]} {
 	set expo_id [db_string query "select expo_id from expo_edizioni where attivo is true limit 1"]
     } else {
 	set expo_id [db_string query "select expo_id from expo_edizioni order by data desc limit 1"]
     }
-} elseif {[db_0or1row query "select * from expo_edizioni where lower(permalink) = :request limit 1"]} {
-    set expo_id [db_string query "select expo_id from expo_edizioni where lower(permalink) = :request limit 1"]
+} else {
+    ns_log notice bibba $request
+    #Se permalink non coincide, prende ultima edizione
+    if {[db_0or1row query "select * from expo_edizioni where permalink ilike :request limit 1"]} {
+	set expo_id [db_string query "select expo_id from expo_edizioni where permalink ilike :request limit 1"]
+    } else {
+	if {[db_0or1row query "select * from expo_edizioni where attivo is true limit 1"]} {
+	    set expo_id [db_string query "select expo_id from expo_edizioni where attivo is true limit 1"]
+	} else {
+	    set expo_id [db_string query "select expo_id from expo_edizioni order by data desc limit 1"]
+	}
+    }
 }
 rp_form_put expo_id $expo_id
-set internal_path "/packages/[ad_conn package_key]/www/expo"
+set internal_path "/packages/[ad_conn package_key]/www/edizione"
 rp_internal_redirect $internal_path

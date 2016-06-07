@@ -1,8 +1,5 @@
-# 
-
 ad_page_contract {
-    
-    
+    Ciclo per la cancellazione degli eventuali doppioni.
     
     @author mattia (mattia.righetti@professionefinanza.com)
     @creation-date 2016-01-11
