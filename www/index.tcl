@@ -50,14 +50,35 @@ if {$msg ne ""} {
     set msg_html ""
 }
 set session_id [ad_get_cookie session_id]
-# Imposta link per tabella
-db_foreach query "select evento_id from expo_eventi where expo_id = :expo_id" {
-    if {[db_0or1row query "select * from expo_tmp where evento_id = :evento_id and session_id = '[ad_get_cookie session_id]'"]} {
-	set button_event_$evento_id "<br><a class=\"btn btn-danger btn-xs\" href=\"tmp?evento_id=$evento_id\"><span class=\"fa fa-times\"></span> Disiscriviti</a>"
-    } else {
-	set button_event_$evento_id "<br><a class=\"btn btn-primary btn-xs\" href=\"tmp?evento_id=$evento_id\"><span class=\"fa fa-check\"></span> Iscriviti</a>"
-    }
+
+
+
+
+#PROVA PER INSERIMENTO TABELLA
+set orari [db_list query "select * from (select start_time as orari from expo_eventi where expo_id = :expo_id union select end_time as orari from expo_eventi where expo_id = :expo_id) t order by orari"]
+set events_table "<table cellspacing=\"5\" cellpadding=\"5\" class=\"tbl\"><tbody><tr class=\"blue\"><td><img class=\"center-block\" height=\"auto\" width=\"120px\" src=\"http://images.professionefinanza.com/pfexpo/logos/roma-2016.png\"></td>"
+#Estrazione sale
+db_foreach query "select s.denominazione from expo_sale s, expo_luoghi l, expo_edizioni e where e.expo_id = :expo_id and e.luogo_id = l.luogo_id and s.luogo_id = l.luogo_id order by s.sala_id" {
+    append events_table "<td>" $denominazione "<br></td>"
 }
+append events_table "</tr>"
+foreach orario $orari {
+    append events_table "<tr>\n<td class=\"blue\">" [db_string query "select to_char('$orario'::timestamp, 'HH24:MI')"] "</td>\n"
+    db_foreach query "select e.evento_id, e.denominazione,  c.hex_color, e.permalink, e.start_time, e.end_time from expo_eventi e, expo_percorsi c where e.start_time = :orario and c.percorso_id = e.percorso_id order by sala_id" {
+	set rowspan [expr [lsearch $orari $end_time] - [lsearch $orari $start_time]]
+	append events_table "<td rowspan=\"" $rowspan "\" bgcolor=\"" $hex_color "\"><a href=\"/programma/" $permalink "\">" $denominazione "<br><img height=\"\" width=\"auto\" src=\"" "\" align=\"right\"><br>"
+	if {[db_0or1row query "select * from expo_tmp where evento_id = :evento_id and session_id = '[ad_get_cookie session_id]'"]} {
+	    append events_table "<a class=\"btn btn-danger btn-xs\" href=\"tmp?evento_id=$evento_id\"><span class=\"fa fa-times\"></span> Disiscriviti</a>"
+	} else {
+	    append events_table "<a class=\"btn btn-primary btn-xs\" href=\"tmp?evento_id=$evento_id\"><span class=\"fa fa-check\"></span> Iscriviti</a>"
+	}
+	append events_table "</a></td>\n"
+    }
+    append events_table "</tr>\n"
+}
+append events_table "</tbody></table>"
+
+
 #Imposta bottone conferma
 if {[db_0or1row query "select * from expo_tmp where session_id = '[ad_get_cookie session_id]' limit 1"]} {
     set confirm_button "<a class=\"btn btn-success btn-lg\" href=\"form\"><span class=\"fa fa-check-circle\"></span> Conferma</a>"

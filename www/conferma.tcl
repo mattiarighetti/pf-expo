@@ -205,7 +205,7 @@ append body "<p style=\"font-size:15px;color:#000;\" align=\"left\"><i>-&nbsp;$d
                                 if {[db_0or1row query "select * from expo_iscrizioni i, expo_eventi e where i.iscritto_id = :iscritto_id and i.evento_id = e.evento_id and e.prezzo > 0::money limit 1"]} {
                                 append body {
                                 <h1 style="font-size:15px; color:#ffff" align="left">Ti sei iscritto a un corso a pagamento, <b>in caso tu non abbia usufruito di un VOUCHER</b>, potrai procedere in due modi:<br><br />
-                                  - effettuare un bonifico bancario di 120,78 € (99,00 + IVA) intestato a:<br />
+                                  - effettuare un bonifico bancario di 364,78 € (299,00 + IVA) intestato a:<br />
                                   </br>
                                   <strong>PF Holding srl</strong> - IBAN: IT17P0103001610000000606927 SWIFT: PASCITM1MI - Causale: Corso PFEXPO + cognome partecipante <br />
                                   </br>
@@ -240,7 +240,7 @@ append body "<p style=\"font-size:15px;color:#000;\" align=\"left\"><i>-&nbsp;$d
                                     <h1 style="font-size:15px; color:#ffff">&nbsp;</h1>
                                     <p style="font-size:15px; color:#ffff">&nbsp;</p>
                                     <p style="font-size:15px; color:#ffff">&nbsp;</p>
-                                    <h1 style="font-size:15px; color:#F90; font-weight: bold;" align="center">Ti ringraziamo per la disponibilità, ti aspettiamo il 7 giugno a Firenze.
+                                    <h1 style="font-size:15px; color:#F90; font-weight: bold;" align="center">Ti ringraziamo per la disponibilità, ti aspettiamo il 29 settembre a Roma.
                                       </p>
                                       <!---azzurro--> </h1>
                                     <div class="movableContent">
@@ -324,7 +324,7 @@ append body "<p style=\"font-size:15px;color:#000;\" align=\"left\"><i>-&nbsp;$d
                                   <div class="contentEditable">
                                     <h1 style="font-size:36px; color:#27567E">}
 append body [db_string query "select to_char(data, 'DD/MM/YYYY') from expo_edizioni where attivo is true"]
-append body { - <strong>FIRENZE</strong></h1>
+append body { - <strong>ROMA</strong></h1>
     <h1 style="font-size:16px; color:#999">}
 append body [db_string query "select l.denominazione from expo_luoghi l, expo_edizioni e where e.attivo is true and e.luogo_id = l.luogo_id"]
 append body {</h1>

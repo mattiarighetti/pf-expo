@@ -3,7 +3,7 @@ if {[set request [string range $query [expr [string last / $query] + 1] end]] eq
     rp_internal_redirect "/packages/[ad_conn package_key]/www/programma"
     ad_script_abort
 }
-if {[db_0or1row query "select * from expo_eventi where lower(permalink) = :request limit 1"] && [info exists evento_id] == 0} {
+if {[db_0or1row query "select * from expo_eventi where permalink ilike :request limit 1"] && [info exists evento_id] == 0} {
     set evento_id [db_string query "select evento_id from expo_eventi where lower(permalink) = :request limit 1"]
 } else {
     if {[info exists evento_id] == 0} {
