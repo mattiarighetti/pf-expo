@@ -233,25 +233,30 @@
 							Potrai iscriverti gratuitamente a uno o tutti i corsi sottostanti cliccando sulle immagini.<br> 
 						</div>
 					</center>
-					<!--<div class="row container">
+					<div class="row container">
 						<div class="col-sm-6 col-md-6 col-xs-12">
-							<a href="https://www.eventbrite.it/e/biglietti-pfexpo-firenze-dal-financial-advisory-al-wealth-planning-come-cambia-la-consulenza-ai-grandi-24425153291" target="_blank">
-								<img class="img-responsive" src="http://images.professionefinanza.com/pfexpo/mifid II-firenze.jpg">
+							<a href="https://www.eventbrite.it/e/biglietti-pfexpo-la-busta-arancione-come-leggerla-e-quali-soluzioni-per-il-futuro-26878758089?aff=es2" target="_blank">
+								<img class="img-responsive" src="http://images.professionefinanza.com/pfexpo/investitori/roma16/tutela-patrimonio.jpg">
 							</a>
 						</div>
 						<div class="col-sm-6 col-md-6 col-xs-12">
-							<a href="https://www.eventbrite.it/e/biglietti-pfexpo-firenze-paola-marella-sale-in-cattedra-sugli-scenari-e-prospettive-del-mercato-immobiliare-24645563544" target="_blank">
-								<img class="img-responsive" src="http://images.professionefinanza.com/pfexpo/marella-firenze.jpg">
+							<a href="https://www.eventbrite.it/e/biglietti-pfexpo-la-corretta-valutazione-delle-rendite-immobiliari-26895419925?aff=es2" target="_blank">
+								<img class="img-responsive" src="http://images.professionefinanza.com/pfexpo/investitori/roma16/rendite-immobiliari.jpg">
 							</a>
 						</div>
 						<div class="col-sm-6 col-md-6 col-xs-12">
-							<a href="https://www.eventbrite.it/e/biglietti-pfexpo-firenze-lo-stato-patrimoniale-del-cliente-imprenditore-come-valutare-correttamente-le-24645612691" target="_blank">
-								<img class="img-responsive" src="http://images.professionefinanza.com/pfexpo/impresa-firenze.jpg">
+							<a href="https://www.eventbrite.it/e/biglietti-pfexpo-il-mercato-come-larena-sportiva-le-nuove-sfide-fortificano-26895435973?aff=es2" target="_blank">
+								<img class="img-responsive" src="http://images.professionefinanza.com/pfexpo/investitori/roma16/mercato-arena.jpg">
 							</a>
 						</div>
 						<div class="col-sm-6 col-md-6 col-xs-12">
-							<a href="https://www.eventbrite.it/e/biglietti-pfexpo-firenze-la-solidita-del-sistema-bancario-e-il-bail-in-cosa-cambia-per-il-risparmiatore-24645316806" target="_blank">
-							  <img class="img-responsive" src="http://images.professionefinanza.com/pfexpo/busta-firenze.jpg">
+							<a href="https://www.eventbrite.it/e/biglietti-pfexpo-fisco-e-coppie-di-fatto-cosa-cambia-in-ottica-successoria-26895473084?aff=es2" target="_blank">
+							  <img class="img-responsive" src="http://images.professionefinanza.com/pfexpo/investitori/roma16/fisco.jpg">
+							</a>
+						  </div>
+						<div class="col-sm-6 col-md-6 col-xs-12">
+							<a href="https://www.eventbrite.it/e/biglietti-pfexpo-public-speaking-larte-di-parlare-in-pubblico-26895485120?aff=es2" target="_blank">
+							  <img class="img-responsive" src="http://images.professionefinanza.com/pfexpo/investitori/roma16/public-speaking.jpg">
 							</a>
 						</div>
 					</div> 

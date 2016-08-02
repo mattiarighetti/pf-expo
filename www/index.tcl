@@ -54,7 +54,7 @@ set session_id [ad_get_cookie session_id]
 
 
 
-#PROVA PER INSERIMENTO TABELLA
+#CREAZIONE TABELLA ORARIA
 set orari [db_list query "select * from (select start_time as orari from expo_eventi where expo_id = :expo_id union select end_time as orari from expo_eventi where expo_id = :expo_id) t order by orari"]
 set events_table "<table cellspacing=\"5\" cellpadding=\"5\" class=\"tbl\"><tbody><tr class=\"blue\"><td><img class=\"center-block\" height=\"auto\" width=\"120px\" src=\"http://images.professionefinanza.com/pfexpo/logos/roma-2016.png\"></td>"
 #Estrazione sale
@@ -64,9 +64,13 @@ db_foreach query "select s.denominazione from expo_sale s, expo_luoghi l, expo_e
 append events_table "</tr>"
 foreach orario $orari {
     append events_table "<tr>\n<td class=\"blue\">" [db_string query "select to_char('$orario'::timestamp, 'HH24:MI')"] "</td>\n"
-    db_foreach query "select e.evento_id, e.denominazione,  c.hex_color, e.permalink, e.start_time, e.end_time from expo_eventi e, expo_percorsi c where e.start_time = :orario and c.percorso_id = e.percorso_id order by sala_id" {
+    db_foreach query "select e.evento_id, e.denominazione, case when e.prezzo > 0::money then 'p' else 'g' end as prezzo, c.hex_color, e.permalink, e.start_time, e.end_time from expo_eventi e, expo_percorsi c where e.start_time = :orario and c.percorso_id = e.percorso_id order by sala_id" {
 	set rowspan [expr [lsearch $orari $end_time] - [lsearch $orari $start_time]]
-	append events_table "<td rowspan=\"" $rowspan "\" bgcolor=\"" $hex_color "\"><a href=\"/programma/" $permalink "\">" $denominazione "<br><img height=\"\" width=\"auto\" src=\"" "\" align=\"right\"><br>"
+	append events_table "<td rowspan=\"" $rowspan "\" bgcolor=\"" $hex_color "\"><a href=\"/programma/" $permalink "\">"
+	if {$prezzo eq "p"} {
+	    append events_table "<img height=\"40px\" width=\"auto\" src=\"http://images.professionefinanza.com/pfexpo/icons/moneta_bianca.png\" align=\"right\">"
+	}
+	append events_table $denominazione "<br><img height=\"\" width=\"auto\" src=\"" "\" align=\"right\"><br>"
 	if {[db_0or1row query "select * from expo_tmp where evento_id = :evento_id and session_id = '[ad_get_cookie session_id]'"]} {
 	    append events_table "<a class=\"btn btn-danger btn-xs\" href=\"tmp?evento_id=$evento_id\"><span class=\"fa fa-times\"></span> Disiscriviti</a>"
 	} else {

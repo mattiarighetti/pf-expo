@@ -205,11 +205,11 @@ append body "<p style=\"font-size:15px;color:#000;\" align=\"left\"><i>-&nbsp;$d
                                 if {[db_0or1row query "select * from expo_iscrizioni i, expo_eventi e where i.iscritto_id = :iscritto_id and i.evento_id = e.evento_id and e.prezzo > 0::money limit 1"]} {
                                 append body {
                                 <h1 style="font-size:15px; color:#ffff" align="left">Ti sei iscritto a un corso a pagamento, <b>in caso tu non abbia usufruito di un VOUCHER</b>, potrai procedere in due modi:<br><br />
-                                  - effettuare un bonifico bancario di 364,78 € (299,00 + IVA) intestato a:<br />
+                                  - effettuare un bonifico bancario di 120,78 € (99,00 + IVA) intestato a:<br />
                                   </br>
                                   <strong>PF Holding srl</strong> - IBAN: IT17P0103001610000000606927 SWIFT: PASCITM1MI - Causale: Corso PFEXPO + cognome partecipante <br />
                                   </br>
-                                  - pagare con carta di credito <a href="https://www.paypal.com/it/cgi-bin/webscr?cmd=_flow&SESSION=R5G9-MM9jhLIeOHXBVPthdG-OAO58NXSIAcJbo9zCJg9NFdPbp7ha0vwsXO&dispatch=50a222a57771920b6a3d7b606239e4d529b525e0b7e69bf0224adecfb0124e9b61f737ba21b081984719ecfa9a8ffe80733a1a700ced90ae">cliccando qua</a>.<br> <br />
+                                  - pagare con carta di credito <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AENQPQQAXKJK2">cliccando qua</a>.<br> <br />
 				    </br>
                                   <br />
                                   Per l'emissione della relativa fattura invia una mail con i propri dati fiscali all'indirizzo:<br />
