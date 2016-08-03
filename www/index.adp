@@ -203,7 +203,14 @@
 <!-- inizio tabella-->
 				<center>
 					<div class="well well-sm">
-						<strong>Iscriviti</strong> subito al PFEXPO per assicurarti il posto in aula utilizzando il programma sottostante. Premendo il titolo</b> dell'evento potrai avere informazioni sul corso formativo.<br>Premendo su <b>iscriviti</b> salverai la tua preferenza.<br><b>Quando hai scelto</b> i tuoi percorsi premi su <b>conferma</b> in fondo alla tabella ed inserisci i tuoi dati per confermare la tua iscrizione.<br><u>Assicurati di aver scelto tutti i corsi formativi prima di premere conferma: ogni nuova iscrizione cancellerà le precedenti.</u>
+						<strong>Iscriviti</strong> subito al PFEXPO per assicurarti il posto in aula utilizzando il programma sottostante. 
+Premendo il titolo dell'evento potrai avere informazioni sul corso formativo. Premendo su <strong>ISCRIVITI</strong> salverai la tua preferenza.
+Quando hai scelto i tuoi percorsi premi su <strong>CONFERMA</strong> in fondo alla tabella ed inserisci i tuoi dati per completare la tua iscrizione.
+Assicurati di aver scelto tutti i corsi formativi prima di premere conferma: ogni nuova iscrizione cancellerà le precedenti.
+<br><br>
+ProfessioneFinanza e i partner dell’evento avranno il piacere di offrirti, durante la giornata, due coffee break 
+(a metà mattinata e a metà pomeriggio) e un business lunch a metà giornata.
+
 					</div>
 					
 					</br>
