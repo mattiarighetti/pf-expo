@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	
-	<title>@intestazione@ - PFEXPO</title>
+	<title>PFEXPO</title>
 
 	<link rel="shortcut icon" href="/assets/img/favicon.ico">
 	
@@ -32,73 +32,48 @@
     <header id="header" class="fixed-header navbar-fixed-top sb-slide">
       <div class="container">
 	<div class="logo local-scroll">
-	  <a href="/#top" class="site-brand"><img src="http://images.professionefinanza.com/pfexpo/logos/pfexpo.png" height="100%"></a>
+	  <a href="/#top" class="site-brand"><img src="http://images.professionefinanza.com/logos/pfexpo.png" height="100%"></a>
 				       </div> <!-- .logo -->
 	<div class="sb-toggle-right pull-right visible-xs visible-sm">
 	  <i class="fa fa-bars"></i>
 				  </div>
 	<nav class="site-nav hidden-xs hidden-sm">
 	  <ul class="main-menu local-scroll">
-	    <li><a href="/#top">Home</a></li>
+	    <li><a href="/#top" class="active">Home</a></li>
           <li><a href="/#iscriviti">Iscriviti</a></li>
           <li><a href="/#programma">Programma</a></li>
-          <li><a href="/#speakers" class="active">Speakers</a></li>
+          <li><a href="/#speakers">Speakers</a></li>
           <li><a href="/#partners">Partners</a></li>
-            <li><a href="/#edizioni">Edizioni</a></li>
-            <li><a href="/#contatti">Contatti</a></li>
-	    <li><a href="http://www.facebook.com/ProfessioneFinanza" target="_blank">News</a></li>
-					    </ul> <!-- .main-menu -->
-				       </nav> <!-- .site-nav -->
-			       </div> <!-- .container -->
-			  </header> <!-- #header -->
-    
-	       </div> <!-- #top -->
-  
-  <div id="sb-site">
-    
-    <div class="page-intro">
-      
-      <div class="header-space" style="height: 72px;"></div>
-      
-      <div id="page-sample" class="page-top page-section parallax-section">
-	<div style="background-color:#000" class="parallax-bg" data-bottom-top="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#page-sample">
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-md-12 text-center">
-		<h2 class="title">@intestazione@</h2>
-		<p class="subtitle"><if @posizione@ not nil><h4>@posizione@</h4><br></if><if @citazione@ not nil>@citazione@</if></p>
-										    </div> <!-- .col-md-12 -->
-								     </div> <!-- .row -->
-							     </div> <!-- .container -->
-						     </div> <!-- .parallax-bg -->
-					     </div> <!-- .page-top -->
-      
-			      </div> <!-- .page-intro -->
-    
-    <div class="wrapper">
-      
-      <div class="container">
-	
-	<div class="page-section">
-	  
-	  <div class="row">
-	    
-	    <div class="col-md-10 col-md-offset-1">
-	      
-	      <h3 class="mb-3">@intestazione@</h3>
-	      <img src="http://images.professionefinanza.com/pfexpo/speakers_portraits/@immagine@" alt="" class="alignright">
-	      <p>@short_cv;noquote@</p>
-	      
-	      <center><br></br>@events_table;noquote@</center>
-				   </div> <!-- .col-md-10 -->
-	    
-								    </div> <!-- .row -->
-	  
-						     </div> <!-- .page-section -->
-	
-					     </div> <!-- .container -->
-      
-				     </div> <!-- .wrapper -->
+          <li><a href="/#edizioni">Edizioni</a></li>
+          <li><a href="/#contatti">Contatti</a></li>
+			        </ul> <!-- .main-menu -->
+				</nav> <!-- .site-nav -->
+			</div> <!-- .container -->
+		</header> <!-- #header -->
+
+	</div> <!-- #top -->
+
+	<div id="sb-site">
+
+		<div class="page-intro">
+			
+			<div class="header-space" style="height: 70px;"></div>
+
+			<div id="page-sample" class="page-top page-section parallax-section">
+				<div style="background-color: orange" class="parallax-bg" data-bottom-top="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#page-sample">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<h2 class="title">Ci dispiace,</br> ma le slide <strong>non</strong> sono state rese</br><strong> pubbliche</strong>.</br> Ti contatteremo in caso il docente</br>decida di pubblicarle.</h2>
+								<!--<p class="subtitle"></p>-->
+							</div> <!-- .col-md-12 -->
+						</div> <!-- .row -->
+					</div> <!-- .container -->
+				</div> <!-- .parallax-bg -->
+			</div> <!-- .page-top -->
+
+		</div> <!-- .page-intro -->
+
     
   
   <footer class="site-footer">
@@ -159,7 +134,7 @@
         <div class="social-icons mb-2"> <a href="http://www.facebook.com/professionefinanza" target="_blank" class="fa fa-facebook"></a> <a href="http://www.instagram.com/professionefinanza" target="_blank" class="fa fa-instagram"></a> <a href="http://www.twitter.com/PFHolding" target="_blank" class="fa fa-twitter"></a> <!--<a href="#" target="_blank" class="fa fa-google-plus"></a>--> </div>
         <!-- .social-icons -->
         <div class="footer-copyright">
-          <div class="copyright-text">&copy; 2015 | PF Holding S.r.l. Tutti i diritti riservati. Creato da <a href="http://www.mattiarighetti.it/">Mattia Righetti</a>.</div>
+          <div class="copyright-text">&copy; 2015 | PF Holding S.r.l. Tutti i diritti riservati. Creato con <i class="fa fa-heart"></i> da <a href="http://www.mattiarighetti.it/">Mattia Righetti</a> e Luca Cristino.</div>
         </div>
       </div>
       <!-- .container --> 

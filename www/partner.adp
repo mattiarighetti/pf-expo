@@ -82,7 +82,7 @@
 	   <!--   <h3 class="mb-3">@intestazione@</h3>-->
 	   <p>@descrizione_par;noquote@</p>
 	    <center>
-	      <img class="img-responsive" src="@portrait@" width="25%">
+	      <img class="img-responsive" src="http://images.professionefinanza.com/pfexpo/partners_portraits/@portrait@" width="25%">
 	      </center>
 	      <if @events_table@ not nil>
 		<center><br></br>@events_table;noquote@<br></center>
@@ -156,7 +156,7 @@
         <div class="social-icons mb-2"> <a href="http://www.facebook.com/professionefinanza" target="_blank" class="fa fa-facebook"></a> <a href="http://www.instagram.com/professionefinanza" target="_blank" class="fa fa-instagram"></a> <a href="http://www.twitter.com/PFHolding" target="_blank" class="fa fa-twitter"></a> <!--<a href="#" target="_blank" class="fa fa-google-plus"></a>--> </div>
         <!-- .social-icons -->
         <div class="footer-copyright">
-          <div class="copyright-text">&copy; 2015 | PF Holding S.r.l. Tutti i diritti riservati. Creato con <i class="fa fa-heart"></i> da <a href="http://www.mattiarighetti.it/">Mattia Righetti</a>.</div>
+          <div class="copyright-text">&copy; 2015 | PF Holding S.r.l. Tutti i diritti riservati. Creato da <a href="http://www.mattiarighetti.it/">Mattia Righetti</a>.</div>
         </div>
       </div>
       <!-- .container --> 

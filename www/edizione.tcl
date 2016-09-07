@@ -3,43 +3,31 @@ ad_page_contract {
     @creation-date 2015-11-16
     @cvs-id $Id$set oacs:msg
 } {
-    {expo_id "6"}
+    expo_id:naturalnum
     {msg ""}
 }
-# Se ID Expo vuoto, prende quello attivo
-if {$expo_id eq ""} {
-    set expo_id [db_string query "select expo_id from expo_edizioni where attivo is true"]
-}
+ns_log notice expo2id $expo_id
 set session_id [ad_get_cookie session_id]
 if {$session_id eq ""} {
     ad_set_cookie -max_age "inf" session_id [ad_get_cookie ad_session_id]
 }
 #Basic settings
 set page_title [db_string query "select 'PFEXPO - '||c.denominazione||' '||to_char(e.data, 'YYYY') from expo_edizioni e, expo_luoghi l, comuni c where c.comune_id = l.comune_id and e.luogo_id = l.luogo_id and expo_id = :expo_id"]
-ns_log notice pippo $page_title
 set logo_url "http://images.professionefinanza.com/pfexpo/logos/"
 append logo_url [db_string query "select immagine from expo_edizioni where expo_id = :expo_id"]
 template::add_footer -html "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js\"></script>"
 #template::head::add_css -href "expo_style.css" 
 template::add_body_handler -event "data-spy" -script "scroll"
-template::head::add_css -href "../timetable.css"
+template::head::add_css -href "/timetable.css"
 template::add_body_handler -event "data-target" -script "#barra"
 template::add_body_handler -event "style" -script "position:relative;"
 #template::add_body_handler -event "data-offset" -script "50"
 #template::head::add_javascript -src "pfexpo.js"
-template::head::add_css -href "expo_style.css" 
+template::head::add_css -href "/expo_style.css" 
 
 #DIVIDER: #HOME
 set pfexpo_data [db_string query "select to_char(e.data, 'dd/mm/yyyy')||' - '||c.denominazione from expo_edizioni e, expo_luoghi l, comuni c where c.comune_id = l.comune_id and l.luogo_id = e.luogo_id and e.expo_id = :expo_id"]
 set pfexpo_luogo [db_string query "select l.denominazione from expo_luoghi l, expo_edizioni e where e.expo_id = :expo_id and l.luogo_id = e.luogo_id"]
-#set marquee "<div style=\"display:inline-block\">"
-#db_foreach query "select citazione, relatore_id from expo_relatori where citazione is not null order by random()" {
-#    append marquee "<div class=\"row\"><div class=\"col-md-6\"><h1>&ldquo;</h1><p>$citazione</p><h1>&rdquo;</h1></div>"
-#    set nominativo [db_string query "select nome||' '||cognome from expo_relatori where relatore_id = :relatore_id"]
-#    set posizione [db_string query "select posizione from expo_relatori where relatore_id = :relatore_id"]
-#    append marquee "<div class=\"col-md-6\"><h4>$nominativo</h4><br><p>$posizione</p></div></div>"
-#}
-#append marquee "</div>"
 set carousel_url "#iscriviti"
 
 #DIVIDER: #ISCRIVITI
@@ -50,51 +38,20 @@ if {$msg ne ""} {
     set msg_html ""
 }
 set session_id [ad_get_cookie session_id]
-
-
-
-
-#CREAZIONE TABELLA ORARIA
-set orari [db_list query "select * from (select start_time as orari from expo_eventi where expo_id = :expo_id union select end_time as orari from expo_eventi where expo_id = :expo_id) t order by orari"]
-set events_table "<table cellspacing=\"5\" cellpadding=\"5\" class=\"tbl\"><tbody><tr class=\"blue\"><td><img class=\"center-block\" height=\"auto\" width=\"120px\" src=\"http://images.professionefinanza.com/pfexpo/logos/roma-2016.png\"></td>"
-#Estrazione sale
-db_foreach query "select s.denominazione from expo_sale s, expo_luoghi l, expo_edizioni e where e.expo_id = :expo_id and e.luogo_id = l.luogo_id and s.luogo_id = l.luogo_id order by s.sala_id" {
-    append events_table "<td>" $denominazione "<br></td>"
-}
-append events_table "</tr>"
-foreach orario $orari {
-    append events_table "<tr>\n<td class=\"blue\">" [db_string query "select to_char('$orario'::timestamp, 'HH24:MI')"] "</td>\n"
-    db_foreach query "select e.evento_id, e.denominazione, e.soldout,case when e.prezzo > 0::money then 'p' else 'g' end as prezzo, c.hex_color, e.permalink, e.start_time, e.end_time from expo_eventi e, expo_percorsi c where e.start_time = :orario and c.percorso_id = e.percorso_id order by sala_id" {
-	set rowspan [expr [lsearch $orari $end_time] - [lsearch $orari $start_time]]
-	append events_table "<td rowspan=\"" $rowspan "\" bgcolor=\"" $hex_color "\"><a href=\"/programma/" $permalink "\">"
-	if {$prezzo eq "p"} {
-	    append events_table "<img height=\"40px\" width=\"auto\" src=\"http://images.professionefinanza.com/pfexpo/icons/moneta_bianca.png\" align=\"right\">"
-	}
-	if {$soldout == "t"} {
-	    append denominazione "<small><br><i>(SOLD OUT)</i></small>"
-	}
-	append events_table $denominazione "<br><img height=\"\" width=\"auto\" src=\"" "\" align=\"right\"><br>"
-	if {$soldout ne "t"} {
-	    if {[db_0or1row query "select * from expo_tmp where evento_id = :evento_id and session_id = '[ad_get_cookie session_id]'"]} {
-		append events_table "<a class=\"btn btn-danger btn-xs\" href=\"tmp?evento_id=$evento_id\"><span class=\"fa fa-times\"></span> Disiscriviti</a>"
-	    } else {
-		append events_table "<a class=\"btn btn-primary btn-xs\" href=\"tmp?evento_id=$evento_id\"><span class=\"fa fa-check\"></span> Iscriviti</a>"
-	    }
-	    append events_table "</a></td>\n"
-	}
+# Imposta link per tabella
+db_foreach query "select evento_id from expo_eventi where expo_id = :expo_id" {
+    if {[db_0or1row query "select * from expo_tmp where evento_id = :evento_id and session_id = '[ad_get_cookie session_id]'"]} {
+	set button_event_$evento_id "<br><a class=\"btn btn-danger btn-xs\" href=\"tmp?evento_id=$evento_id\"><span class=\"fa fa-times\"></span> Disiscriviti</a>"
+    } else {
+	set button_event_$evento_id "<br><a class=\"btn btn-primary btn-xs\" href=\"tmp?evento_id=$evento_id\"><span class=\"fa fa-check\"></span> Iscriviti</a>"
     }
-    append events_table "</tr>\n"
 }
-append events_table "</tbody></table>"
-
-
 #Imposta bottone conferma
 if {[db_0or1row query "select * from expo_tmp where session_id = '[ad_get_cookie session_id]' limit 1"]} {
     set confirm_button "<a class=\"btn btn-success btn-lg\" href=\"form\"><span class=\"fa fa-check-circle\"></span> Conferma</a>"
 } else {
     set confirm_button ""
 }
-
 #DIVIDER: #EVENTI
 #Comincia estrazione eventi per lista
 set eventlist_html ""
@@ -163,7 +120,6 @@ db_foreach query "select tipo_id, descrizione as tipologia from expo_speakers_ti
 	append speaker_list_html "</div>"
     }
 }
-
 #DIVIDER: #PARTNERS
 set partners_list_html "<div class=\"container\"><div class=\"row\">"
 db_foreach query "select categoria_id, descrizione as categoria from expo_par_cat order by item_order" {
