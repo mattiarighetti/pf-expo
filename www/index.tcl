@@ -64,11 +64,11 @@ db_foreach query "select s.denominazione from expo_sale s, expo_luoghi l, expo_e
 append events_table "</tr>"
 foreach orario $orari {
     append events_table "<tr>\n<td class=\"blue\">" [db_string query "select to_char('$orario'::timestamp, 'HH24:MI')"] "</td>\n"
-    db_foreach query "select e.evento_id, e.denominazione, e.soldout,case when e.prezzo > 0::money then 'p' else 'g' end as prezzo, c.hex_color, e.permalink, e.start_time, e.end_time from expo_eventi e, expo_percorsi c where e.start_time = :orario and c.percorso_id = e.percorso_id order by sala_id" {
+    db_foreach query "select e.evento_id, e.denominazione, e.percorso_id, e.soldout,case when e.prezzo > 0::money then 'p' else 'g' end as prezzo, c.hex_color, e.permalink, e.start_time, e.end_time from expo_eventi e, expo_percorsi c where e.start_time = :orario and c.percorso_id = e.percorso_id order by sala_id" {
 	set rowspan [expr [lsearch $orari $end_time] - [lsearch $orari $start_time]]
 	append events_table "<td rowspan=\"" $rowspan "\" bgcolor=\"" $hex_color "\"><a href=\"/programma/" $permalink "\">"
 	if {$prezzo eq "p"} {
-	    append events_table "<img height=\"40px\" width=\"auto\" src=\"http://images.professionefinanza.com/pfexpo/icons/moneta_bianca.png\" align=\"right\">"
+	    append events_table "<img height=\"30px\" width=\"auto\" src=\"http://images.professionefinanza.com/pfexpo/icons/moneta_bianca.png\" align=\"right\">"
 	}
 	if {$soldout == "t"} {
 	    append denominazione "<small><br><i>(SOLD OUT)</i></small>"
@@ -80,8 +80,12 @@ foreach orario $orari {
 	    } else {
 		append events_table "<a class=\"btn btn-primary btn-xs\" href=\"tmp?evento_id=$evento_id\"><span class=\"fa fa-check\"></span> Iscriviti</a>"
 	    }
-	    append events_table "</a></td>\n"
 	}
+	if {[db_0or1row query "select * from expo_percorsi where percorso_id = :percorso_id and icon_white is not null"]} {
+	    set icon_white [db_string query "select icon_white from expo_percorsi where percorso_id = :percorso_id"]
+	    append events_table "<br><img align=\"right\" width=\"60px\" src=\"http://images.professionefinanza.com/categorie/white/$icon_white\" />"
+	}
+	append events_table "</a></td>\n"
     }
     append events_table "</tr>\n"
 }
