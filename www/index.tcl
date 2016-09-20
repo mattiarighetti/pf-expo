@@ -83,7 +83,7 @@ foreach orario $orari {
 	}
 	if {[db_0or1row query "select * from expo_percorsi where percorso_id = :percorso_id and icon_white is not null"]} {
 	    set icon_white [db_string query "select icon_white from expo_percorsi where percorso_id = :percorso_id"]
-	    append events_table "<br><img align=\"right\" width=\"60px\" src=\"http://images.professionefinanza.com/categorie/white/$icon_white\" />"
+	    append events_table "<img align=\"right\" width=\"30px\" src=\"http://images.professionefinanza.com/categorie/white/$icon_white\" />"
 	}
 	append events_table "</a></td>\n"
     }

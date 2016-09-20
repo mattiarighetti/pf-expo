@@ -120,7 +120,7 @@
 		      <!-- .row --> 
 				    </div>
 		    <div class="row animated" data-animation="fadeInUp" data-animation-delay="100">
-		      <div class="col-md-3 col-sm-6 col-xs-12">
+		      <div class="col-md-2 col-sm-6 col-xs-12">
 			<div class="team-member">
 			  <div class="team-image mb-1"> 
 			    <img src="http://images.professionefinanza.com/pfexpo/roma2017/special-guest/demasi.png" alt="">
@@ -133,7 +133,7 @@
 			  <!-- .team-member --> 
 					      </div>
 					  </div>
-		      <div class="col-md-3 col-sm-6 col-xs-12">
+		      <div class="col-md-2 col-sm-6 col-xs-12">
 			<div class="team-member">
 			  <div class="team-image mb-1">
 			    <img src="http://images.professionefinanza.com/pfexpo/roma2017/special-guest/pelanda.png" alt="">
@@ -149,7 +149,7 @@
 			  <!-- .team-member --> 
 						  </div>
 					    </div>
-		      <div class="col-md-3 col-sm-6 col-xs-12">
+		      <div class="col-md-2 col-sm-6 col-xs-12">
 			<div class="team-member">
 			  <div class="team-image mb-1"> 
 			    <img src="http://images.professionefinanza.com/pfexpo/roma2017/special-guest/tabacci.png" alt="">
@@ -162,7 +162,7 @@
 			  <!-- .team-member --> 
 					      </div>
 					  </div>
-		      <div class="col-md-3 col-sm-6 col-xs-12">
+		      <div class="col-md-2 col-sm-6 col-xs-12">
 			<div class="team-member">
 			  <div class="team-image mb-1">
 			    <img src="http://images.professionefinanza.com/pfexpo/roma2017/special-guest/nardi.png" alt="">
@@ -177,7 +177,22 @@
 							  </div>
 			  <!-- .team-member -->
 						    </div>
-					      </div>
+						</div>
+		      <div class="col-md-2 col-sm-6 col-xs-12">
+			<div class="team-member">
+			  <div class="team-image mb-1">
+			    <img src="http://images.professionefinanza.com/pfexpo/roma2017/special-guest/calcaterra.png" alt="">
+			    <div class="hover">
+			      <p class="mt-1">Vuoi conoscere tutto sul corso di: Giorgio Calcaterra?</p>
+			      <a href="">
+				<h3><b>Clicca qui!</b></h3>
+				  </a>
+				</div>
+			    <!-- team-image -->
+			      </div>
+			  <!-- .team-member -->
+			    </div>
+			</div>
 		      
 				  </div>
 			  </div>
@@ -226,8 +241,19 @@
 				<div class="container">
 				  <img class="img-responsive" src="http://images.professionefinanza.com/pfexpo/sito-legenda-roma.jpg"
 				</div>
-<!-- fine tabella-->
+				<!-- fine tabella-->
 
+				<div class="well well-md">
+				  <strong>Gli eventi in Agorà</strong><br />
+				  Quest'anno il PFEXPO si arricchisce di una nuova area all'interno dell'area espositiva: l'Agorà.<br>
+				  In questo spazio di incontro verranno organizzati tre eventi:
+				  <ul>
+				    <li>Ore 11.00/11.30: Presentazione del libro "STRATEGIA DIGITALE. COMUNICARE IN MODO EFFICACE SU INTERNET E I SOCIAL MEDIA" a cura dell'autrice Giuliana Laurita e di Stefania Pescarmona, responsabile sviluppo area editoriale MyAdvice.</li>
+				    <li>Ore 14.10/14.30: SIM SALA MIB. Gli inganni della mente nella valutazione del rischio finanziario. A cura di <a href="http://docenti.professionefinanza.com/alfonso-bartolacci" target="_blank">Alfonso Bartolacci</a>.</li>
+				    <li>Ore 16.30/17.00: Presentazione del libro "CAPIRE L'ECONOMIA FOR DUMMIES" a cura dell'autore Roberto Fini e di Stefania Pescarmona, responsabile sviluppo area editoriale MyAdvice.</li>
+				      </ul>
+				  La partecipazione ai tre eventi è libera.
+</div>
 		
 				<div id="investitore" class="">
 					<center>

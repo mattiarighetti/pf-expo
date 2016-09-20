@@ -86,7 +86,7 @@
 	    <div class="col-md-10 col-md-offset-1">
 	      
 	      <h3 class="mb-3">@intestazione@</h3>
-	      <img src="http://images.professionefinanza.com/pfexpo/speakers_portraits/@immagine@" alt="" class="alignright">
+	      <img width="25%" src="http://images.professionefinanza.com/pfexpo/speakers_portraits/@immagine@" alt="" class="alignright">
 	      <p>@short_cv;noquote@</p>
 	      
 	      <center><br></br>@events_table;noquote@</center>
