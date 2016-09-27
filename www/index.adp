@@ -184,7 +184,7 @@
 			    <img src="http://images.professionefinanza.com/pfexpo/roma2017/special-guest/calcaterra.png" alt="">
 			    <div class="hover">
 			      <p class="mt-1">Vuoi conoscere tutto sul corso di: Giorgio Calcaterra?</p>
-			      <a href="">
+1			      <a href="">
 				<h3><b>Clicca qui!</b></h3>
 				  </a>
 				</div>
@@ -433,7 +433,7 @@
 					</div>
 				
 					<div class="row">
-						<div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
+					  <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
 							<h4>Sei interessato alle precedenti edizioni non in catologo?<br> 
 							Contattaci all'indirizzo: <a href="mailto:info@pfexpo.it">info@pfexpo.it</a></h4>
 						</div>
@@ -445,7 +445,13 @@
 		<!-- fine edizioni -->
 		
 		<div class="home-widget contact-google-map no-space">
-			<div class="show-map-button">
+		  <div class="show-map-button">
+		    <div class="container alert alert-warning">
+		      <img src="http://www.freeiconspng.com/uploads/bus-stop-symbol-icon-28.png" height="50px" /><img src="http://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/614/offlinehbpl.hbpl.co.uk/news/ORP/axalogo-20151112043712714.jpg" height="50px"/><br /><u>Servizio navetta offerto da AXA Investment Managers</u><br />
+
+Prendi la Metro A direzione Battistini. Scendi alla stazione Cornelia dove
+AXA Investment Managers metterà a disposizione di tutti i partecipanti all'evento un servizio di trasporto continuativo, andata (dalle ore 8.00 alle 16.00) e ritorno (dalle ore 16.00 alle 19.00), per e dalla location dell'evento.
+    </div>
 				<a class="map-button">Scopri la location del PFEXPO su Google Maps<br>Crowne Plaza Rome - Via Aurelia Antica 415 - Roma</a>
 			</div>
 			<!-- .show-map-button -->
