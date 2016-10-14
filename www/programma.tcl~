@@ -1,0 +1,11 @@
+ad_page_contract {  
+    @author Mattia Righetti (mattia.righetti@professionefinanza.com)
+    @creation-date 2015-11-16
+    @cvs-id $Id$set oacs:msg
+} {
+    {expo_id [pf::expo::id]}
+}
+#Basic settings
+set logo_url "http://images.professionefinanza.com/pfexpo/logos/"
+append logo_url [db_string query "select immagine from expo_edizioni where expo_id = :expo_id"]
+ad_return_template

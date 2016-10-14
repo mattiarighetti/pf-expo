@@ -6,12 +6,8 @@ ad_page_contract {
     {message ""}
 }
 db_1row query "select e.denominazione as evento, p.hex_color, case when e.prezzo = 0::money then 'Partecipazione gratuita' else '<img src=\"http://pfexpo.professionefinanza.com/timetable/pagamento.png\"/> Partecipazione a pagamento<br>Costo: € 99.00 + IVA.<br>' end as prezzo, s.denominazione as sala, to_char(e.start_time, 'HH24:MI') as start_time, to_char(e.end_time, 'HH24:MI') as end_time, case when e.soldout is true then '<div class=\"alert alert-warning alert-dismissible\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Il corso è in stato di Sold Out.</br>' else '' end as soldout_msg from expo_eventi e, expo_percorsi p, expo_sale s where s.sala_id = e.sala_id and p.percorso_id = e.percorso_id and e.evento_id = :evento_id"
-set page_title $evento
 set logo_url "http://images.professionefinanza.com/pfexpo/logos/"
 append logo_url [db_string query "select immagine from expo_edizioni where attivo is true"]
-set context [list [list /programma "Programma"] $page_title]
-set fe_html_menu [pf::fe_html_menu -id 7]
-
 #Estrae docenti
 if {[db_0or1row query "select * from docenti d, expo_eve_doc e where d.docente_id = e.docente_id and e.evento_id = :evento_id limit 1"]} {
     set docenti "<center><h4>Docenti</h4><table><tr>"
@@ -53,5 +49,4 @@ if {[db_0or1row query "select * from expo_tmp where evento_id = :evento_id and s
 } else {
     set button "<center><a class=\"btn btn-success\" href=\"/tmp?evento_id=$evento_id\"><span class=\"fa fa-check-circle\"> Iscriviti</span></a></center>"
 }
-template::head::add_css -href "/expo_style.css" 
 ad_return_template
