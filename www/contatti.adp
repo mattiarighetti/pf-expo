@@ -15,7 +15,7 @@
 	<!-- Agency Demo Specific Stylesheet -->
 	<link rel="stylesheet" href="demos/agency/agency.css" type="text/css" />
 	<!-- / -->
-
+	<link rel="stylesheet" href="http://www13.professionefinanza.com/resources/acs-templating/forms.css" type="text/css" />
 	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
 	<link rel="stylesheet" href="css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
@@ -86,29 +86,62 @@
 		============================================= -->
 		<section id="content">
 
-			<div class="content-wrap">
+		  <div class="content-wrap">
 
 				<div class="container clearfix">
-<div class="widget-title">
-		      <div class="row">
-			<div class="col-sm-12">
-			  <h2>I Partner</h2>
-						  </div>
-			<!-- .col-sm-12 --> 
-					  </div>
-		      <!-- .row --> 
-				    </div>
 					<div class="row clearfix">
-					  @html;noquote@
+					  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+					
+					    <div class="widget-title">
+							<h2>Contattaci</h2>
+						</div>
 
-      </div>
+						<p>Telefono: +39 02 39 56 57 25</p>
+						<p>Viale Vittorio Veneto, 28 - 20124 Milano</p>
+						<p>www.professionefinanza.com</p>
+					  	<div class="contact-form">
+											  <table width="100%">
+								<tr>
+									<td>
+										Per richieste di informazioni
+									</td>
+									<td>
+										<a href="mailto:info@pfexpo.it">info@pfexpo.it</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Per diventare partner
+									</td>
+									<td>
+										<a href="mailto:partners@pfexpo.it">partners@pfexpo.it</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Per problemi col portale
+									</td>
+									<td>
+										<a href="mailto:webmaster@pfexpo.it">webmaster@pfexpo.it</a>
+									</td>
+								</tr>
+							</table>
+						</div>
+					  </div>
+					  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+					    <div class="widget-title">
+					    <h2>Su di noi</h2>
+					</div>
+					  <p>ProfessioneFinanza è il portale di riferimento per chi desidera approcciarsi in modo professionale alla gestione del proprio patrimonio finanziario e non solo. Alla scuola di formazione FinanzaAcademy, che ha formato oltre ventimila fra Promotori Finanziari, Consulenti Indipendenti e Private Banker. Fra corsi dedicati, interaziendali e grandi eventi come i PFLAB e il PFEXPO, il più importante evento in Italia dedicato al Professionista della Finanza, abbiamo affiancato la testata giornalistica di formazione e informazione finanziaria MyAdvice.</p>
+						<br>
+	  </div>
 
 
 						</div>
 
 					</div>
 </section>
-
+		
 <!-- Footer
 		============================================= -->
 		<footer id="footer">

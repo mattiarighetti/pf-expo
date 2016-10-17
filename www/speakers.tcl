@@ -13,6 +13,8 @@ ad_page_contract {
 } -validate {
 } -errors {
 }
+set logo_url "http://images.professionefinanza.com/pfexpo/logos/"
+append logo_url [db_string query "select immagine from expo_edizioni where expo_id = :expo_id"]
 #DIVIDER: #SPEAKER
 #Estrae special guest
 set speaker_list_html "<center><h3>Special guest</h3></center><br><div class=\"row\">"

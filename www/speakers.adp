@@ -92,14 +92,14 @@
 <div class="widget-title">
 		      <div class="row">
 			<div class="col-sm-12">
-			  <h2>I Partner</h2>
+			  <h2>Gli speaker</h2>
 						  </div>
 			<!-- .col-sm-12 --> 
 					  </div>
 		      <!-- .row --> 
 				    </div>
 					<div class="row clearfix">
-					  @html;noquote@
+					  @speaker_list_html;noquote@
 
       </div>
 

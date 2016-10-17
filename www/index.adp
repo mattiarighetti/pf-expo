@@ -101,7 +101,7 @@
 
 		<!-- Content
 		============================================= -->
-		<section id="content">
+<!--		<section id="content">
 
 			<div class="content-wrap">
 
@@ -111,25 +111,25 @@
 			<div class="col-sm-12">
 			  <h2>Special guests</h2>
 						  </div>
-			<!-- .col-sm-12 --> 
+			<!-- .col-sm-12 --
 					  </div>
-		      <!-- .row --> 
+		      <!-- .row --
 				    </div>
 					<div class="row clearfix">
 
 						<div class="col-md-4 center bottommargin">
           <img class="img-circle" src="http://images.professionefinanza.com/pfawards/icons/consulenti.png" alt="PFEXPO 2016 a Roma" width="140" height="140">
             <p>Special Guest 1</p>
-        </div><!-- /.col-lg-4 -->
+        </div><!-- /.col-lg-4 --
         <div class="col-md-4 center bottommargin">
           <img class="img-circle" src="http://images.professionefinanza.com/pfawards/icons/incontri.png" alt="Percrsi formativi tematiche finanziarie" width="140" he\
 ight="140">
             <p>Special guest 2</p>
-        </div><!-- /.col-lg-4 -->
+        </div><!-- /.col-lg-4 --
         <div class="col-md-4 center bottommargin">
           <img class="img-circle" src="http://images.professionefinanza.com/pfawards/icons/visibilita.png" alt="" width="140" height="140">
           <p>Special guest 3</p>
-        </div><!-- /.col-lg-4 -->
+        </div><!-- /.col-lg-4 --
 
       </div>
 
@@ -138,7 +138,7 @@ ight="140">
 
 					</div>
 </section>
-
+-->
 <div class="line"></div>
 					<!-- timetable
 		============================================= -->

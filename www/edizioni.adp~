@@ -15,7 +15,7 @@
 	<!-- Agency Demo Specific Stylesheet -->
 	<link rel="stylesheet" href="demos/agency/agency.css" type="text/css" />
 	<!-- / -->
-
+	<link rel="stylesheet" href="http://www13.professionefinanza.com/resources/acs-templating/forms.css" type="text/css" />
 	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
 	<link rel="stylesheet" href="css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
@@ -86,22 +86,23 @@
 		============================================= -->
 		<section id="content">
 
-			<div class="content-wrap">
+		  <div class="content-wrap">
 
 				<div class="container clearfix">
-<div class="widget-title">
-		      <div class="row">
+				  <div class="widget-title">
+				    <div class="row">
 			<div class="col-sm-12">
-			  <h2>I Partner</h2>
+		
+			  <h2>Edizioni</h2>
 						  </div>
 			<!-- .col-sm-12 --> 
 					  </div>
 		      <!-- .row --> 
 				    </div>
 					<div class="row clearfix">
-					  @html;noquote@
-
-      </div>
+					  <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+qua
+	  </div>
 
 
 						</div>
@@ -109,6 +110,8 @@
 					</div>
 </section>
 
+<div class="line"></div>
+		
 <!-- Footer
 		============================================= -->
 		<footer id="footer">

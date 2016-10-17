@@ -64,13 +64,13 @@
 						<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
 						<ul>
-									<li><a href="index"><div>Home</div></a></li>
-									<li><a href="iscriviti"><div>Iscriviti</div></a></li>
-									<li><a href="/programma"><div>Programma</div></a></li>
-									<li><a href="speakers"><div>Speaker</div></a></li>
-									<li><a href="partners"><div>Partner</div></a></li>
-									<li><a href="edizioni"><div>Edizioni</div></a></li>
-									<li><a href="contatti"><div>Contatti</div></a></li>
+						  <li><a href="/index"><div>Home</div></a></li>
+						  <li><a href="/iscriviti"><div>Iscriviti</div></a></li>
+						  <li><a href="/programma"><div>Programma</div></a></li>
+						  <li><a href="/speakers"><div>Speaker</div></a></li>
+						  <li><a href="/partners"><div>Partner</div></a></li>
+						  <li><a href="/edizioni"><div>Edizioni</div></a></li>
+						  <li><a href="/contatti"><div>Contatti</div></a></li>
 						</ul>
 
 					</div>
@@ -101,7 +101,7 @@
 	    <div class="col-md-10 col-md-offset-1">
 	      
 	      <center><!--<h2 class="mb-3">@evento@</h2>--><br>@soldout_msg;noquote@</center>
-	     <h6><p>@descrizione;noquote@</p></h6>
+	     <p>@descrizione;noquote@</p>
 	      
 	      <center><br></br>@docenti;noquote@<br></br>@speakers;noquote@<br></br>@partners;noquote@</center>
 				   </div> <!-- .col-md-10 -->

@@ -82,11 +82,11 @@ ad_form -name "iscriviti" \
 	    {[pf::expo::voucher_check $voucher] == 1 || $voucher eq ""}
 	    "Voucher non valido o scaduto."
 	}
-    } -new_data {
+    } -on_submit {
 	#controlla se esiste gia email
 	if {[db_0or1row query "SELECT * FROM expo_iscritti WHERE email ilike '%:email%' and expo_id = :expo_id limit 1"]} {
 	    set iscritto_id [db_string query "SELECT iscritto_id FROM expo_iscritti WHERE lower(email) like lower('%:email%') and expo_id = :expo_id limit 1"]
-	    db_dml query "delete from expo_iscrizioni where iscritto_id = :iscritto_id"
+	    #db_dml query "delete from expo_iscrizioni where iscritto_id = :iscritto_id"
 	} else {
 	    set iscritto_id [db_string query "SELECT COALESCE(MAX(iscritto_id)+(trunc(random()*99+1)),trunc(random()*99+1)) FROM expo_iscritti"]
 	    set barcode [expr (803000000000 + $iscritto_id)]

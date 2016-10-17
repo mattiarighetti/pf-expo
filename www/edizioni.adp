@@ -15,7 +15,7 @@
 	<!-- Agency Demo Specific Stylesheet -->
 	<link rel="stylesheet" href="demos/agency/agency.css" type="text/css" />
 	<!-- / -->
-
+	<link rel="stylesheet" href="http://www13.professionefinanza.com/resources/acs-templating/forms.css" type="text/css" />
 	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
 	<link rel="stylesheet" href="css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
@@ -86,29 +86,90 @@
 		============================================= -->
 		<section id="content">
 
-			<div class="content-wrap">
+		  <div class="content-wrap">
 
 				<div class="container clearfix">
-<div class="widget-title">
-		      <div class="row">
+				  <div class="widget-title">
+				    <div class="row">
 			<div class="col-sm-12">
-			  <h2>I Partner</h2>
+		
+			  <h2>Edizioni</h2>
 						  </div>
 			<!-- .col-sm-12 --> 
 					  </div>
 		      <!-- .row --> 
 				    </div>
-					<div class="row clearfix">
-					  @html;noquote@
-
-      </div>
-
-
+<div class="container marketing">
+				  <!-- START THE FEATURETTES -->
+					<div class="row featurette">
+					  
+					  <div class="col-md-offset-2 col-md-4 col-sm-offset-1 col-sm-5">
+				    
+					<a href="http://pfexpo.professionefinanza.com/milano-2016" target="_blank">
+				<img class="featurette-image img-responsive center-block" src="http://images.professionefinanza.com/pfexpo/edizioni/expo16ba.jpg">
+							</a>
 						</div>
-
+					  <div class="col-md-4 col-sm-5">
+							<h2 class="featurette-heading">EDIZIONE XI - PFEXPO BARI<span class="text-muted">2016</span></h2> 
+							<!--<button type="button" class="btn btn-primary" onClick="location.href='http://images.professionefinanza.com/pfexpo/edizioni/report_expo15mi.pdf'">Scarica il report</button>-->
+							<button type="button" class="btn btn-success" onClick="location.href='http://images.professionefinanza.com/pfexpo/edizioni/guida_expo16ba.pdf'">Scarica la guida</button>
+						</div>
 					</div>
+				  
+					<div class="row featurette">
+					  
+					  <div class="col-md-offset-2 col-md-4 col-sm-offset-1 col-sm-5">
+				    
+					<a href="http://pfexpo.professionefinanza.com/milano-2016" target="_blank">
+				<img class="featurette-image img-responsive center-block" src="http://images.professionefinanza.com/pfexpo/edizioni/expo16mi.png">
+							</a>
+						  </div>
+					  <div class="col-md-4 col-sm-5">
+							<h2 class="featurette-heading">EDIZIONE X - PFEXPO MILANO<span class="text-muted">2016</span></h2> 
+							<button type="button" class="btn btn-primary" onClick="location.href='http://images.professionefinanza.com/pfexpo/edizioni/report_expo16mi.pdf'">Scarica il report</button>
+							<button type="button" class="btn btn-success" onClick="location.href='http://images.professionefinanza.com/pfexpo/edizioni/guida_expo16mi.pdf'">Scarica la guida</button>
+						</div>
+					</div>
+					<div class="row featurette">
+						<div class="col-md-offset-2 col-md-4 col-sm-offset-1 col-sm-5">
+							<a>
+								<img class="featurette-image img-responsive center-block" src="http://images.professionefinanza.com/pfexpo/edizioni/expo15pd.png">
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-5">
+							<h2 class="featurette-heading">EDIZIONE IX - PFEXPO PADOVA<span class="text-muted">2015</span></h2> 
+							<!--<button type="button" class="btn btn-primary" onClick="location.href='http://images.professionefinanza.com/pfexpo/edizioni/report_expo15mi.pdf'">Scarica il report</button>-->
+							<button type="button" class="btn btn-success" onClick="location.href='http://images.professionefinanza.com/pfexpo/edizioni/guida_expo15pd.pdf'">Scarica la guida</button>
+						</div>
+					</div>
+					<div class="row featurette">
+						<div class="col-md-offset-2 col-md-4 col-sm-offset-1 col-sm-5">
+							<a>
+								<img class="featurette-image img-responsive center-block" src="http://images.professionefinanza.com/pfexpo/edizioni/expo15rm.jpg">
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-5">
+							<h2 class="featurette-heading">EDIZIONE VIII - PFEXPO ROMA<span class="text-muted">2015</span></h2> 
+							<!--<button type="button" class="btn btn-primary" onClick="location.href='http://images.professionefinanza.com/pfexpo/edizioni/report_expo15mi.pdf'">Scarica il report</button>-->
+							<button type="button" class="btn btn-success" onClick="location.href='http://images.professionefinanza.com/pfexpo/edizioni/guida_expo15rm.pdf'">Scarica la guida</button>
+						</div>
+					  </div>
+					<div class="row">
+						<div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
+							<h4>Sei interessato alle precedenti edizioni non in catologo?<br> 
+							Contattaci all'indirizzo: <a href="mailto:info@pfexpo.it">info@pfexpo.it</a></h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- #edizioni -->
+		<!-- fine edizioni -->
+				  
 </section>
 
+<div class="line"></div>
+		
 <!-- Footer
 		============================================= -->
 		<footer id="footer">

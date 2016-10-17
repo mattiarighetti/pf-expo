@@ -33,8 +33,24 @@ ad_form -name "iscriviti" \
 	    {html {maxlength "20" size "50" placeholder "Provincia"}}
 	}
 	{telefono:text
-	    {label "Cellulare"}
+	    {label "telefono"}
 	    {html {maxlength "20" size "50" placeholder "Telefono"}}
+	}
+	{voucher:text,optional
+	    {label "Voucher"}
+	    {html {maxlenght "15" size "50" placeholder "Codice"}}
+	}
+	{portafoglio:text,optional
+	    {label "Ammontare portafoglio"}
+	}
+	{clienti:text,optional
+	    {label "Numero clienti"}
+	}
+	{attivita:text,optional
+	    {label "Anni di attivita"}
+	}
+	{intermediario:text,optional
+	    {label "Intermediario attuale"}
 	}
 	{privacy:boolean(checkbox),optional
 	    {label "Privacy"}
@@ -42,6 +58,9 @@ ad_form -name "iscriviti" \
 	    {help_text "Effettuando questa iscrizone ci si dichiara operatori qualificati ai sensi previsti dai regolamenti Consob."}
 	    {html {size "1" style "width:50px"}}
 	}
+    } -after_submit {
+	ad_returnredirect [export_vars -base "conferma" {iscritto_id}]
+	ad_script_abort
     } -validate {
 	{nome
 	    {[string length $nome] > 2}
@@ -59,6 +78,10 @@ ad_form -name "iscriviti" \
 	    {[string index $telefono 0] eq "3"}
 	    "Il numero non inizia con 3!"
 	}
+	{voucher
+	    {[pf::expo::voucher_check $voucher] == 1 || $voucher eq ""}
+	    "Voucher non valido o scaduto."
+	}
     } -on_submit {
 	#controlla se esiste gia email
 	if {[db_0or1row query "SELECT * FROM expo_iscritti WHERE email ilike '%:email%' and expo_id = :expo_id limit 1"]} {
@@ -70,7 +93,6 @@ ad_form -name "iscriviti" \
 	    db_dml query "INSERT INTO expo_iscritti (iscritto_id, nome, cognome, societa, email, provincia, telefono, data, expo_id, barcode, portafoglio, clienti, attivita) VALUES (:iscritto_id, INITCAP(LOWER(:nome)), INITCAP(LOWER(:cognome)), INITCAP(:societa), LOWER(:email), INITCAP(LOWER(:provincia)), :telefono, current_date, :expo_id, :barcode, :portafoglio, :clienti, :attivita)"
 	}
     } -after_submit {
-	acs_mail_lite::send -send_immediately -to_addr $email -from_addr "no-reply@professionefinanza.com" -reply_to "info@professionefinanza.com" -mime_type "text/plain" -subject "Conferma iscrizione PFEXPO" -body "Gentile Professionista della Finanza,\n\nTi confermiamo l'avvenuta iscrizione al PFEXPO.\n\nBuona giornata,\nIl team th PFEvents"
-	ad_returnredirect iscriviti?msg=ok
+	    ad_returnredirect iscriviti?msg=ok
 	    ad_script_abort
 	}

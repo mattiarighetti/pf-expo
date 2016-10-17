@@ -4,7 +4,6 @@ ad_page_contract {
 }
 set page_title "Partners"
 set context [list $page_title]
-set fe_html_menu [pf::fe_html_menu -id 6]
 set logo_url "http://images.professionefinanza.com/pfexpo/logos/"
 append logo_url [db_string query "select immagine from expo_edizioni where attivo is true"]
 set html "<div class=\"row\">"
