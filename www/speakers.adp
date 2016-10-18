@@ -92,8 +92,8 @@
 <div class="widget-title">
 		      <div class="row">
 			<div class="col-sm-12">
-			  <h2>Gli speaker</h2>
-						  </div>
+			  <center><h2>Gli speaker</h2></center>
+						    </div>
 			<!-- .col-sm-12 --> 
 					  </div>
 		      <!-- .row --> 

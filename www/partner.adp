@@ -47,8 +47,8 @@
 				<!-- Logo
 				============================================= -->
 				<div id="logo" class="divcenter">
-					<a href="index" class="standard-logo"><img class="divcenter" src="@logo_url@" alt="Canvas Logo"></a>
-					<a href="index" class="retina-logo"><img class="divcenter" src="@logo_url@" alt="Canvas Logo"></a>
+					<a href="/index" class="standard-logo"><img class="divcenter" src="@logo_url@" alt="Canvas Logo"></a>
+					<a href="/index" class="retina-logo"><img class="divcenter" src="@logo_url@" alt="Canvas Logo"></a>
 				</div><!-- #logo end -->
 
 			</div>
@@ -80,11 +80,13 @@
 			</div>
 
 		</header><!-- #header end -->
-	<div style="background-image:url('http://images.professionefinanza.com/pfexpo/partners_portraits/@portrait@'); opacity: 0.8;" class="parallax-bg" data-bottom-top="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#page-sample">
+	<div style="background-color:#FFCD1C;" class="parallax-bg" data-bottom-top="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#page-sample">
 	  <div class="container">
 	    <div class="row">
 	      <div class="col-md-12 text-center">
-		<br /><h2 class="title">@intestazione@</h2>
+		<br />
+		<center><img class="img-circle" src="http://images.professionefinanza.com/pfexpo/partners_portraits/@portrait@" alt="@intestazione@" width="100" height="100"></center>
+		<br /><h2 class="title"><font color="#364b81">@intestazione@</font></h2>
 								      </div> <!-- .col-md-12 -->
 							      </div> <!-- .row -->
 						      </div> <!-- .container -->

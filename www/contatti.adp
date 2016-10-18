@@ -93,7 +93,7 @@
 					  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
 					
 					    <div class="widget-title">
-							<h2>Contattaci</h2>
+					      <center><h2>Contattaci</h2></center>
 						</div>
 
 						<p>Telefono: +39 02 39 56 57 25</p>

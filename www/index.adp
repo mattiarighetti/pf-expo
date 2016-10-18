@@ -48,7 +48,7 @@
 				<!-- Logo
 				============================================= -->
 				<div id="logo" class="divcenter">
-					<a href="index" class="standard-logo"><img class="divcenter" src="@logo_url@" alt="Canvas Logo"></a>
+				  <a href="index" class="standard-logo"><img class="divcenter" src="@logo_url@" alt="Canvas Logo"></a>
 					<a href="index" class="retina-logo"><img class="divcenter" src="@logo_url@" alt="Canvas Logo"></a>
 				</div><!-- #logo end -->
 
@@ -101,7 +101,7 @@
 
 		<!-- Content
 		============================================= -->
-<!--		<section id="content">
+		<section id="content">
 
 			<div class="content-wrap">
 
@@ -109,15 +109,15 @@
 <div class="widget-title">
 		      <div class="row">
 			<div class="col-sm-12">
-			  <h2>Special guests</h2>
-						  </div>
-			<!-- .col-sm-12 --
-					  </div>
-		      <!-- .row --
+			 <center><h2>Special guest</h2></center>
+						    </div>
+			<!-- .col-sm-12 -->
+					      </div>
+		      <!-- .row -->
 				    </div>
 					<div class="row clearfix">
-
-						<div class="col-md-4 center bottommargin">
+					  @speaker_list_html;noquote@
+				<!--		<div class="col-md-4 center bottommargin">
           <img class="img-circle" src="http://images.professionefinanza.com/pfawards/icons/consulenti.png" alt="PFEXPO 2016 a Roma" width="140" height="140">
             <p>Special Guest 1</p>
         </div><!-- /.col-lg-4 --
@@ -129,7 +129,7 @@ ight="140">
         <div class="col-md-4 center bottommargin">
           <img class="img-circle" src="http://images.professionefinanza.com/pfawards/icons/visibilita.png" alt="" width="140" height="140">
           <p>Special guest 3</p>
-        </div><!-- /.col-lg-4 --
+        </div><!-- /.col-lg-4 -->
 
       </div>
 
@@ -138,7 +138,7 @@ ight="140">
 
 					</div>
 </section>
--->
+
 <div class="line"></div>
 					<!-- timetable
 		============================================= -->
@@ -150,7 +150,7 @@ ight="140">
 <div class="widget-title">
 		      <div class="row">
 			<div class="col-sm-12">
-			  <h2>Gli eventi in programma</h2>
+			  <center><h2>Gli eventi in programma</h2></center>
 						  </div>
 			<!-- .col-sm-12 --> 
 					  </div>
@@ -162,7 +162,7 @@ ight="140">
 				</div>
 				<br>
 				<div class="container">
-				  <img class="img-responsive" src="http://images.professionefinanza.com/pfexpo/sito-legenda-roma.jpg"
+				  <img class="img-responsive" src="http://images.professionefinanza.com/pfexpo/sito-legenda-padova.jpg"
 				</div>
 				<!-- fine tabella-->
 
@@ -176,7 +176,7 @@ ight="140">
 				<div class="widget-title">
 		      <div class="row">
 			<div class="col-sm-12">
-			  <h2>Location</h2>
+			<center><h2>Location</h2></center>
 						  </div>
 			<!-- .col-sm-12 --> 
 					  </div>

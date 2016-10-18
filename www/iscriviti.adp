@@ -97,7 +97,7 @@
 			      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			      <strong>Iscrizione effettuata!</strong> A breve riceverai un'email di riepilogo.
     </div>
-			      </if>
+				</if>
 			  <h2>Iscriviti al PFEXPO </h2>
 						  </div>
 			<!-- .col-sm-12 --> 
@@ -106,6 +106,9 @@
 				    </div>
 					<div class="row clearfix">
 					  <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+					    <div class="well well-sm">
+					      <p>L’iscrizione all’evento ti permetterà di scegliere in loco i corsi da seguire fino ad esaurimento posti.<br />La presenza all’intero evento (9.30 – 18.30) ti permetterà di usufruire GRATUITAMENTE di 2 corsi online validi per il mantenimento della certificazione EFA (16 ore in modalità A).</p>
+						  </div>
 					    <formtemplate id="iscriviti"></formtemplate>
 	</div>
 
