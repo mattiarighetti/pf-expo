@@ -39,7 +39,7 @@ ad_form -name "iscriviti" \
 	{privacy:boolean(checkbox),optional
 	    {label "Privacy"}
 	    {options {{"Accetto" 1}}}
-	    {help_text "Effettuando questa iscrizone ci si dichiara operatori qualificati ai sensi previsti dai regolamenti Consob."}
+	    {help_text "Effettuando questa iscrizone ci si dichiara operatori qualificati ai sensi previsti dai regolamenti Consob.<br/><small><a href=\"http://professionefinanza.com/pagina.php?id=8\" target=\"_blank\"><u>Privacy Policy</u></a></small>"}
 	    {html {size "1" style "width:50px"}}
 	}
     } -validate {
